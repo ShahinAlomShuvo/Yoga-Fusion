@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "serviceName": "Private and Group Lesson",
+    "imageLink": "https://i.ibb.co/TqDPryr/1.jpg",
+    "price": 60,
+    "description": "Experience the best of both worlds with our private and group yoga lessons. Our expert instructors provide personalized guidance tailored to your needs. Whether you prefer one-on-one attention or the camaraderie of a group, you'll discover balance and strength in a supportive environment."
+  },
+  {
+    "id": 2,
+    "serviceName": "YogaFit for Beginners",
+    "imageLink": "https://i.ibb.co/jWQCBkS/replacewebp.webp",
+    "price": 40,
+    "description": "Embark on your yoga journey with our YogaFit for Beginners class. This welcoming and serene environment is perfect for newcomers. We focus on fundamental poses and essential breathing techniques to build a strong foundation. Reduce stress, improve flexibility, and nurture your overall well-being."
+  },
+  {
+    "id": 3,
+    "serviceName": "YogaFit for Pregnant",
+    "imageLink": "https://i.ibb.co/yWyGmmx/3.webp",
+    "price": 55,
+    "description": "Embrace the beauty of pregnancy with our specialized YogaFit for Pregnant mothers. These classes are thoughtfully designed to promote relaxation, strength, and flexibility during this precious journey. Our gentle, pregnancy-safe poses and guided breathing exercises ensure a peaceful and healthy transition to motherhood."
+  },
+  {
+    "id": 4,
+    "serviceName": "YogaFit Barre",
+    "imageLink": "https://i.ibb.co/PQHxfvq/4.webp",
+    "price": 45,
+    "description": "Elevate your fitness with YogaFit Barre, a dynamic fusion of yoga and barre exercises. Enhance your flexibility, balance, and muscle tone while enjoying a harmonious workout that leaves you feeling empowered and rejuvenated. Discover the perfect synthesis of grace and strength."
+  },
+  {
+    "id": 5,
+    "serviceName": "YogaFit Core",
+    "imageLink": "https://i.ibb.co/qWV8DPF/5.webp",
+    "price": 50,
+    "description": "Strengthen and tone your core muscles while enhancing posture and stability with YogaFit Core. Our class focuses on abdominal and back strength, helping you achieve a centered and balanced body. Elevate your core fitness today and experience the benefits of a strong, stable core."
+  },
+  {
+    "id": 6,
+    "serviceName": "YogaFit Restore",
+    "imageLink": "https://i.ibb.co/LkJTFms/6.webp",
+    "price": 45,
+    "description": "Restore your inner peace and vitality with YogaFit Restore. This restorative yoga practice is dedicated to relaxation and stress relief. Gentle postures, deep breathing, and guided meditation guide you to profound tranquility, rejuvenating your mind and body. Rediscover your inner calm with us."
+  }
+]
