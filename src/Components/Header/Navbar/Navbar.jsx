@@ -1,9 +1,20 @@
 import { Link, NavLink } from "react-router-dom";
 import avatar from "../../../assets/Images/avatar.png";
+import useAuth from "../../../Hooks/useAuth";
+import toast from "react-hot-toast";
 // import logo from "../../../assets/Images/yogaLogo.jpg";
 
 const Navbar = () => {
-  const user = null;
+  const { user, signOutUser } = useAuth();
+
+  const logOut = () => {
+    signOutUser()
+      .then(() => toast.success("Log Out Successful"))
+      .catch((error) => {
+        console.log(error.message);
+        return toast.error(error.code);
+      });
+  };
 
   const navLinks = (
     <>
@@ -60,29 +71,32 @@ const Navbar = () => {
           <ul className='menu menu-horizontal px-1'>{navLinks}</ul>
         </div>
         <div className='navbar-end space-x-4'>
+          <h3 className='text-lg text-[#45445A] font-semibold'>
+            {user && user.displayName}
+          </h3>
           <div className='avatar'>
-            <div className='w-11 rounded-full ring ring-black ring-offset-base-100 ring-offset-2'>
+            <div className='w-11 rounded-full'>
               <img
                 src={user && user.photoURL ? user.photoURL : avatar}
                 alt='User Avatar'
               />
             </div>
           </div>
-          {/* {user ? (
+          {user ? (
             <button
-              
-              className='btn font-semibold text-xl capitalize'
+              onClick={logOut}
+              className='btn bg-[#C4D114] text-gray-600 border border-transparent hover:border-[#C4D114] hover:bg-transparent capitalize py-2 px-4 rounded-md transition duration-300 ease-in-out '
             >
               Log Out
             </button>
           ) : (
             <Link
               to={"/login"}
-              className='btn font-semibold text-xl capitalize'
+              className='btn bg-[#C4D114] text-gray-600 border border-transparent hover:border-[#C4D114] hover:bg-transparent capitalize py-2 px-4 rounded-md transition duration-300 ease-in-out '
             >
               Login
             </Link>
-          )} */}
+          )}
         </div>
       </nav>
     </div>

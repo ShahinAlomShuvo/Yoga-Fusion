@@ -1,13 +1,14 @@
 import { useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { GrGithub, GrGoogle } from "react-icons/gr";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import useAuth from "../../Hooks/useAuth";
 import toast from "react-hot-toast";
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
   const { signInUser, googleSignIn, githubSignIn } = useAuth();
 
+  const location = useLocation();
   const navigate = useNavigate();
 
   // toggle password
@@ -26,6 +27,7 @@ const Login = () => {
     signInUser(email, password)
       .then((res) => {
         console.log(res.user);
+        navigate(location?.state ? location.state : "/");
         toast.success("Login Successful");
       })
       .catch((error) => {
@@ -36,6 +38,7 @@ const Login = () => {
   const socialSignIn = (socialPlatform) => {
     socialPlatform()
       .then((res) => {
+        navigate(location?.state ? location.state : "/");
         toast.success("Registration Successful");
       })
       .catch((err) => {

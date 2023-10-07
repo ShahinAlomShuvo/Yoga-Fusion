@@ -1,5 +1,8 @@
 import { FaCheck } from "react-icons/fa";
-import meditationPic from "../../assets/Images/event.png";
+import { Player, BigPlayButton } from "video-react";
+import "../../../node_modules/video-react/dist/video-react.css";
+import yogaPromo from "../../assets/Video/yogaPromo.mp4";
+import banner from "../../assets/Images/slider1.webp";
 
 const UpComingEvent = () => {
   return (
@@ -24,12 +27,11 @@ const UpComingEvent = () => {
           Make an Appointment
         </button>
       </div>
-      <div className='hidden md:block'>
-        <img
-          className='w-full h-[500px]'
-          src={meditationPic}
-          alt='meditationPic'
-        />
+      <div className='hidden md:block '>
+        <Player fluid={false} height={450} width={700} poster={banner}>
+          <source src={yogaPromo} />
+          <BigPlayButton position='center' />
+        </Player>
       </div>
     </div>
   );
