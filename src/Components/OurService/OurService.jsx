@@ -2,14 +2,7 @@ import { useEffect, useState } from "react";
 import ServiceCard from "./ServiceCard";
 import SectionHeader from "../Shared/SectionHeader";
 
-const OurService = () => {
-  const [serviceData, setServiceData] = useState([]);
-  useEffect(() => {
-    fetch("/serviceData.json")
-      .then((res) => res.json())
-      .then((data) => setServiceData(data));
-  }, []);
-
+const OurService = ({ serviceData }) => {
   return (
     <div className='container mx-auto'>
       <SectionHeader
