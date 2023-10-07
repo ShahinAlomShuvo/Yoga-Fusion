@@ -7,6 +7,7 @@ import Register from "../Pages/Register/Register";
 import AboutUs from "../Pages/AboutUs/AboutUs";
 import Store from "../Pages/Store/Store";
 import ServiceDetails from "../Components/ServiceDetails/ServiceDetails";
+import PrivateRoute from "../PrivateRoute/PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -21,16 +22,28 @@ const router = createBrowserRouter([
       },
       {
         path: "/serviceDetails/:id",
-        element: <ServiceDetails></ServiceDetails>,
+        element: (
+          <PrivateRoute>
+            <ServiceDetails></ServiceDetails>
+          </PrivateRoute>
+        ),
         loader: () => fetch("/serviceData.json"),
       },
       {
         path: "/about",
-        element: <AboutUs></AboutUs>,
+        element: (
+          <PrivateRoute>
+            <AboutUs></AboutUs>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/store",
-        element: <Store></Store>,
+        element: (
+          <PrivateRoute>
+            <Store></Store>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/login",

@@ -1,16 +1,52 @@
 import { useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { GrGithub, GrGoogle } from "react-icons/gr";
+import { Link, useNavigate } from "react-router-dom";
+import useAuth from "../../Hooks/useAuth";
+import toast from "react-hot-toast";
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
+  const { signInUser, googleSignIn, githubSignIn } = useAuth();
 
-  const togglePasswordVisibility = () => {
+  const navigate = useNavigate();
+
+  // toggle password
+  const togglePassword = () => {
     setShowPassword(!showPassword);
+  };
+
+  const loginHandler = (e) => {
+    e.preventDefault();
+
+    const form = new FormData(e.currentTarget);
+
+    const email = form.get("email");
+    const password = form.get("password");
+
+    signInUser(email, password)
+      .then((res) => {
+        console.log(res.user);
+        toast.success("Login Successful");
+      })
+      .catch((error) => {
+        return toast.error(error.message);
+      });
+  };
+
+  const socialSignIn = (socialPlatform) => {
+    socialPlatform()
+      .then((res) => {
+        toast.success("Registration Successful");
+      })
+      .catch((err) => {
+        console.log(err.message);
+        return toast.error(err.code);
+      });
   };
   return (
     <div className='flex justify-center items-center py-20 bg-gray-800'>
       <div className='w-full max-w-lg p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700'>
-        <form className='space-y-6' action='#'>
+        <form className='space-y-6' onSubmit={loginHandler}>
           <h5 className='text-xl font-medium text-gray-900 dark:text-white'>
             Sign in to our platform
           </h5>
@@ -49,7 +85,7 @@ const Login = () => {
               <button
                 type='button'
                 className='absolute inset-y-0 right-0 flex items-center pr-3 focus:outline-none'
-                onClick={togglePasswordVisibility}
+                onClick={togglePassword}
               >
                 {showPassword ? (
                   <FaEyeSlash className='text-gray-400' />
@@ -100,6 +136,29 @@ const Login = () => {
             </Link>
           </div>
         </form>
+        {/* Sign in with Google */}
+        <div className='mt-4'>
+          <button
+            onClick={() => socialSignIn(googleSignIn)}
+            type='button'
+            className='w-full flex items-center justify-center text-white px-5 py-2 border border-gray-300 rounded-lg hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:hover:bg-gray-600 dark:focus:ring-blue-800'
+          >
+            <GrGoogle className='mr-2' />
+            Sign in with Google
+          </button>
+        </div>
+
+        {/* Sign in with GitHub */}
+        <div className='mt-2'>
+          <button
+            onClick={() => socialSignIn(githubSignIn)}
+            type='button'
+            className='w-full text-white flex items-center justify-center px-5 py-2 border border-gray-300 rounded-lg hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:hover:bg-gray-600 dark:focus:ring-blue-800'
+          >
+            <GrGithub className='mr-2' />
+            Sign in with GitHub
+          </button>
+        </div>
       </div>
     </div>
   );

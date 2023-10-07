@@ -1,18 +1,70 @@
 import { useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { GrGoogle, GrGithub } from "react-icons/gr";
+import { Link, useNavigate } from "react-router-dom";
+import useAuth from "../../Hooks/useAuth";
+import toast from "react-hot-toast";
 
 const Register = () => {
+  const { createUser, updateUserProfile, googleSignIn, githubSignIn } =
+    useAuth();
   const [showPassword, setShowPassword] = useState(false);
+  const navigate = useNavigate();
 
-  const togglePasswordVisibility = () => {
+  // toggle show password
+  const togglePassword = () => {
     setShowPassword(!showPassword);
   };
+
+  const registrationHandler = (e) => {
+    e.preventDefault();
+
+    const form = new FormData(e.currentTarget);
+
+    const name = form.get("name");
+    const imageUrl = form.get("imageUrl");
+    const email = form.get("email");
+    const password = form.get("password");
+
+    // validation
+    const passwordPattern =
+      /^(?=.*[A-Z])(?=.*[!@#$%^&*()_+{}\[\]:;<>,.?~\\-]).+$/;
+    if (password.length < 6) {
+      return toast.error("Password must have 6 character");
+    } else if (!passwordPattern.test(password)) {
+      return toast.error("You must have an uppercase & a special character");
+    }
+
+    createUser(email, password)
+      .then((res) => {
+        updateUserProfile(name, imageUrl);
+        navigate("/");
+        toast.success("Registration Successful");
+        console.log(res.user);
+      })
+      .catch((err) => {
+        console.log(err);
+        return toast.error(err.message);
+      });
+  };
+
+  const socialSignIn = (socialPlatform) => {
+    socialPlatform()
+      .then((res) => {
+        toast.success("Registration Successful");
+        navigate("/");
+      })
+      .catch((err) => {
+        console.log(err.message);
+        return toast.error(err.code);
+      });
+  };
+
   return (
     <div>
       <div className='flex justify-center items-center py-20 bg-gray-800'>
         <div className='w-full max-w-xl p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700'>
-          <form className='space-y-6' action='#'>
+          <form className='space-y-6' onSubmit={registrationHandler}>
             <h5 className='text-xl font-medium text-gray-900 dark:text-white'>
               Register an account
             </h5>
@@ -83,7 +135,7 @@ const Register = () => {
                 <button
                   type='button'
                   className='absolute inset-y-0 right-0 flex items-center pr-3 focus:outline-none'
-                  onClick={togglePasswordVisibility}
+                  onClick={togglePassword}
                 >
                   {showPassword ? (
                     <FaEyeSlash className='text-gray-400' />
@@ -128,6 +180,29 @@ const Register = () => {
               </Link>
             </div>
           </form>
+          {/* Sign in with Google */}
+          <div className='mt-4'>
+            <button
+              onClick={() => socialSignIn(googleSignIn)}
+              type='button'
+              className='w-full flex items-center justify-center text-white px-5 py-2 border border-gray-300 rounded-lg hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:hover:bg-gray-600 dark:focus:ring-blue-800'
+            >
+              <GrGoogle className='mr-2' />
+              Sign in with Google
+            </button>
+          </div>
+
+          {/* Sign in with GitHub */}
+          <div className='mt-2'>
+            <button
+              onClick={() => socialSignIn(githubSignIn)}
+              type='button'
+              className='w-full text-white flex items-center justify-center px-5 py-2 border border-gray-300 rounded-lg hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:hover:bg-gray-600 dark:focus:ring-blue-800'
+            >
+              <GrGithub className='mr-2' />
+              Sign in with GitHub
+            </button>
+          </div>
         </div>
       </div>
     </div>
