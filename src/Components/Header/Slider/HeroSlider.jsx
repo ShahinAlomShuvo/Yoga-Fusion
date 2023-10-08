@@ -19,7 +19,7 @@ const HeroSlider = () => {
             <div className='hero-overlay bg-opacity-60'></div>
             <div className='hero-content text-center text-neutral-content'>
               <div className='max-w-md'>
-                <h1 className='mb-5 text-5xl font-bold'>
+                <h1 className='mb-5 text-3xl md:text-5xl font-bold'>
                   Mediation Practice <br />{" "}
                   <span className='text-[#C4D114]'>for all</span>
                 </h1>
@@ -50,7 +50,7 @@ const HeroSlider = () => {
             <div className='hero-overlay bg-opacity-60'></div>
             <div className='hero-content text-center text-neutral-content'>
               <div className='max-w-md'>
-                <h1 className='mb-5 text-5xl font-bold'>
+                <h1 className='mb-5 text-3xl md:text-5xl font-bold'>
                   Essential Yoga <br />{" "}
                   <span className='text-[#C4D114]'>for busy People</span>
                 </h1>
@@ -81,7 +81,7 @@ const HeroSlider = () => {
             <div className='hero-overlay bg-opacity-60'></div>
             <div className='hero-content text-center text-neutral-content'>
               <div className='max-w-md'>
-                <h1 className='mb-5 text-5xl font-bold'>
+                <h1 className='mb-5 text-3xl md:text-5xl font-bold'>
                   Inspiration <br />{" "}
                   <span className='text-[#C4D114]'>for joyful living</span>
                 </h1>

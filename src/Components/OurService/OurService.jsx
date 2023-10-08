@@ -4,7 +4,7 @@ import SectionHeader from "../Shared/SectionHeader";
 
 const OurService = ({ serviceData }) => {
   return (
-    <div className='container mx-auto'>
+    <div className='container mx-auto px-5 lg:0'>
       <SectionHeader
         sectionTitle={"Our Services"}
         sectionSlogan={

@@ -48,7 +48,7 @@ const Login = () => {
   };
   return (
     <div className='flex justify-center items-center py-20 bg-gray-800'>
-      <div className='w-full max-w-lg p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700'>
+      <div className='w-full max-w-sm md:max-w-lg p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700'>
         <form className='space-y-6' onSubmit={loginHandler}>
           <h5 className='text-xl font-medium text-gray-900 dark:text-white'>
             Sign in to our platform

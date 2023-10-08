@@ -71,10 +71,11 @@ const Navbar = () => {
           <ul className='menu menu-horizontal px-1'>{navLinks}</ul>
         </div>
         <div className='navbar-end space-x-4'>
-          <h3 className='text-lg text-[#45445A] font-semibold'>
+          {/* nav end content for medium and large screen  */}
+          <h3 className='text-lg text-[#45445A] font-semibold hidden md:block'>
             {user && user.displayName}
           </h3>
-          <div className='avatar'>
+          <div className='avatar hidden md:block'>
             <div className='w-11 rounded-full'>
               <img
                 src={user && user.photoURL ? user.photoURL : avatar}
@@ -82,21 +83,61 @@ const Navbar = () => {
               />
             </div>
           </div>
-          {user ? (
-            <button
-              onClick={logOut}
-              className='btn bg-[#C4D114] text-gray-600 border border-transparent hover:border-[#C4D114] hover:bg-transparent capitalize py-2 px-4 rounded-md transition duration-300 ease-in-out '
+          <div className='hidden md:block'>
+            {user ? (
+              <button
+                onClick={logOut}
+                className='btn bg-[#C4D114] text-gray-600 border border-transparent hover:border-[#C4D114] hover:bg-transparent capitalize py-2 px-4 rounded-md transition duration-300 ease-in-out '
+              >
+                Log Out
+              </button>
+            ) : (
+              <Link
+                to={"/login"}
+                className='btn bg-[#C4D114] text-gray-600 border border-transparent hover:border-[#C4D114] hover:bg-transparent capitalize py-2 px-4 rounded-md transition duration-300 ease-in-out '
+              >
+                Login
+              </Link>
+            )}
+          </div>
+          {/* nav end for small screen  */}
+          <div className='dropdown dropdown-end md:hidden'>
+            <div tabIndex={0} className='avatar hover:cursor-pointer'>
+              <div className='w-11 rounded-full'>
+                <img
+                  src={user && user.photoURL ? user.photoURL : avatar}
+                  alt='User Avatar'
+                />
+              </div>
+            </div>
+            <ul
+              tabIndex={0}
+              className='dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52 '
             >
-              Log Out
-            </button>
-          ) : (
-            <Link
-              to={"/login"}
-              className='btn bg-[#C4D114] text-gray-600 border border-transparent hover:border-[#C4D114] hover:bg-transparent capitalize py-2 px-4 rounded-md transition duration-300 ease-in-out '
-            >
-              Login
-            </Link>
-          )}
+              <li>
+                <h3 className='text-lg text-[#45445A] font-semibold'>
+                  {user && user.displayName}
+                </h3>
+              </li>
+              <li>
+                {user ? (
+                  <button
+                    onClick={logOut}
+                    className=' bg-[#C4D114] text-gray-600 border border-transparent hover:border-[#C4D114] hover:bg-transparent capitalize py-2 mt-2 w-full rounded-md transition duration-300 ease-in-out '
+                  >
+                    <span className='ml-12 font-bold'>Log Out</span>
+                  </button>
+                ) : (
+                  <Link
+                    to={"/login"}
+                    className='bg-[#C4D114] text-gray-600 border border-transparent hover:border-[#C4D114] hover:bg-transparent capitalize py-2 mt-2 w-full rounded-md transition duration-300 ease-in-out '
+                  >
+                    <span className='ml-12 font-bold'>Login</span>
+                  </Link>
+                )}
+              </li>
+            </ul>
+          </div>
         </div>
       </nav>
     </div>
