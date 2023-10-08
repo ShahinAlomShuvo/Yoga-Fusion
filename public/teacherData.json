@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "name": "Linda Crow",
+    "profilePic": "https://i.ibb.co/2v9F6yH/teacher1.jpg",
+    "badge": "Certified Instructor",
+    "areaOfExp": "Hatha Yoga",
+    "Experience": "5 years"
+  },
+  {
+    "id": 2,
+    "name": "Jane Smith",
+    "profilePic": "https://i.ibb.co/47pTC5T/teacher2.jpg",
+    "badge": "Therapy Specialist",
+    "areaOfExp": "Yoga for Stress Relief",
+    "Experience": "7 years"
+  },
+  {
+    "id": 3,
+    "name": "David Johnson",
+    "profilePic": "https://i.ibb.co/98grqRg/teacher3.jpg",
+    "badge": "Wellness Coach",
+    "areaOfExp": "Ashtanga Yoga",
+    "Experience": "6 years"
+  },
+  {
+    "id": 4,
+    "name": "Sarah Brown",
+    "profilePic": "https://i.ibb.co/VHCTwJD/teacher5.jpg",
+    "badge": "Philosophy Expert",
+    "areaOfExp": "Yogic Philosophy",
+    "Experience": "8 years"
+  },
+  {
+    "id": 5,
+    "name": "Emily Adams",
+    "profilePic": "https://i.ibb.co/qmbVJLw/teacher4.jpg",
+    "badge": "Athletes Specialist",
+    "areaOfExp": "Yoga for Flexibility",
+    "Experience": "4 years"
+  },
+  {
+    "id": 6,
+    "name": "Olivia Wilson",
+    "profilePic": "https://i.ibb.co/XJK1yq6/teacher6.jpg",
+    "badge": "Prenatal Instructor",
+    "areaOfExp": "Yoga for Pregnancy",
+    "Experience": "3 years"
+  }
+]

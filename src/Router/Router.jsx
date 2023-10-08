@@ -36,6 +36,7 @@ const router = createBrowserRouter([
             <AboutUs></AboutUs>
           </PrivateRoute>
         ),
+        loader: () => fetch("/teacherData.json"),
       },
       {
         path: "/store",
