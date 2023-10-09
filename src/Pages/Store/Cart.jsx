@@ -12,11 +12,11 @@ const Cart = () => {
   }, []);
   const total = cartProduct.reduce((acc, product) => acc + product.price, 0);
   return (
-    <div className='w-full  md:px-24 lg:px-0'>
+    <div className='w-full pl-16  md:px-24 lg:px-0'>
       <h2 className='text-xl font-bold border-b px-8 lg:px-0'>Cart Item</h2>
       <div>
         {cartProduct.length === 0 ? (
-          <div className='text-center'>No Products in Cart</div>
+          <div className='text-center mt-8'>No Products in Cart</div>
         ) : (
           cartProduct.map((product, idx) => (
             <CartItems product={product} key={idx}></CartItems>
@@ -32,7 +32,7 @@ const Cart = () => {
         {cartProduct.length > 0 && (
           <button
             onClick={() => toast.success("Thanks For PurChase")}
-            className='btn btn-block bg-[#C4D114] btn-neutral border-none '
+            className='btn btn-block bg-[#C4D114] text-gray-500 btn-neutral border-none '
           >
             Check Out
           </button>

@@ -31,7 +31,6 @@ const Store = () => {
               key={product.id}
               product={product}
               getId={getId}
-              cartProduct={cartProduct}
             ></StoreProduct>
           ))}
         </div>
