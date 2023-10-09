@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { getStoredProduct } from "../../Utilities/localstorage";
+import CartItems from "./CartItems";
 
 const Cart = () => {
   const [cartProduct, setCartProduct] = useState([]);
@@ -17,41 +18,18 @@ const Cart = () => {
           <div>No Products in Cart</div>
         ) : (
           cartProduct.map((product, idx) => (
-            <div key={idx} className='mt-3 flex justify-between'>
-              <div className='flex gap-4 items-center '>
-                <img
-                  className='w-12 h-12 rounded-md'
-                  src={product.img}
-                  alt=''
-                />
-                <div className='flex flex-col'>
-                  <h3 className='font-semibold text-[#45445A]'>
-                    {product.productName}
-                  </h3>
-                  <p className='text-gray-500'>Price: ${product.price}</p>
-                </div>
-              </div>
-              <button className='btn btn-xs btn-circle text-red-600 btn-outline'>
-                <svg
-                  xmlns='http://www.w3.org/2000/svg'
-                  className='h-6 w-6'
-                  fill='none'
-                  viewBox='0 0 24 24'
-                  stroke='currentColor'
-                >
-                  <path
-                    strokeLinecap='round'
-                    strokeLinejoin='round'
-                    strokeWidth='2'
-                    d='M6 18L18 6M6 6l12 12'
-                  />
-                </svg>
-              </button>
-            </div>
+            <CartItems product={product} key={idx}></CartItems>
           ))
         )}
       </div>
-      <p>Total:{total.toFixed(2)}</p>
+      {cartProduct.length > 0 && (
+        <p className='text-xl font-bold py-4'>Total:{total.toFixed(2)}$</p>
+      )}
+      {cartProduct.length > 0 && (
+        <button className='btn btn-block bg-[#C4D114] btn-neutral border-none '>
+          Check Out
+        </button>
+      )}
     </div>
   );
 };

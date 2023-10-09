@@ -66,7 +66,7 @@ console.log(food);
 
 #### Answer: A
 
-<i>Changing the favoriteFood property of the info object to "🍝" does not change the contents of the food array.</i>
+<i>Changing the favoriteFood property of the info object to "🍝" does not change the contents of the food array. Thats why the output will be A: `['🍕', '🍫', '🥑', '🍔']`</i>
 
 </p>
 </details>

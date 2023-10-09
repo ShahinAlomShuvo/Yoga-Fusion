@@ -1,8 +1,14 @@
+import Aos from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 const TeacherCard = ({ teacher }) => {
   const { name, profilePic, badge, areaOfExp, Experience } = teacher;
+  useEffect(() => {
+    Aos.init();
+  }, []);
   return (
     <div className='pb-10'>
-      <div className='card  bg-base-100 shadow-xl'>
+      <div className='card  bg-base-100 shadow-xl' data-aos='zoom-in'>
         <figure>
           <img
             className='h-64 w-full'

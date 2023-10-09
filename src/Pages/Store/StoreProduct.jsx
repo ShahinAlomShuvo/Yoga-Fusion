@@ -1,5 +1,13 @@
+import Aos from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
+
 const StoreProduct = ({ product, getId }) => {
   const { productName, img, price, id } = product;
+
+  useEffect(() => {
+    Aos.init({ duration: 1000 });
+  }, []);
 
   const handleProduct = () => {
     getId(id);
@@ -7,7 +15,7 @@ const StoreProduct = ({ product, getId }) => {
 
   return (
     <div className='relative'>
-      <div className='rounded-md h-96 overflow-hidden'>
+      <div className='rounded-md h-96 overflow-hidden' data-aos='fade-up'>
         <img
           className='w-full h-full object-cover'
           src={img}

@@ -1,6 +1,12 @@
 import { FaChild, FaHeart, FaLungs, FaXRay } from "react-icons/fa";
 import yogaLady from "../../assets/Images/yogaLady.png";
+import Aos from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 const MainReason = () => {
+  useEffect(() => {
+    Aos.init({ duration: 1500 });
+  }, []);
   return (
     <div className=' bg-[#F5F6F7]'>
       <div className='container mx-auto pb-10 px-5 lg:px-0'>
@@ -11,7 +17,7 @@ const MainReason = () => {
         {/* main reason container  */}
         <div className='grid md:grid-cols-2  lg:grid-cols-3 gap-5 items-end'>
           {/* main reason left content  */}
-          <div className='space-y-14'>
+          <div className='space-y-14' data-aos='fade-down'>
             <div className='flex flex-col-reverse md:flex-row-reverse lg:flex-row gap-5 lg:gap-10'>
               <div className='mx-auto text-center md:text-left lg:text-right w-10/12 space-y-5'>
                 <h3 className='text-2xl text-[#45445A] font-semibold'>
@@ -47,7 +53,7 @@ const MainReason = () => {
             <img className='w-full' src={yogaLady} alt='yoga lady' />
           </div>
           {/* main reason Right content  */}
-          <div className='space-y-14'>
+          <div className='space-y-14' data-aos='fade-down'>
             <div className='flex flex-col-reverse md:flex-row-reverse gap-5 lg:gap-10'>
               <div className='mx-auto w-10/12 space-y-5'>
                 <h3 className='text-center md:text-left text-2xl text-[#45445A] font-semibold'>

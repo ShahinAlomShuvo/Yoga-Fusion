@@ -3,10 +3,16 @@ import { Player, BigPlayButton } from "video-react";
 import "../../../node_modules/video-react/dist/video-react.css";
 import yogaPromo from "../../assets/Video/yogaPromo.mp4";
 import banner from "../../assets/Images/slider1.webp";
+import Aos from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 
 const UpComingEvent = () => {
+  useEffect(() => {
+    Aos.init({ duration: 500 });
+  }, []);
   return (
-    <div className='grid  lg:grid-cols-2 mt-20 '>
+    <div className='grid  lg:grid-cols-2 mt-20 ' data-aos='fade-up'>
       <div className='bg-[#3A3651] pl-[80px] py-12 flex flex-col justify-center'>
         <p className='text-[#C4D114] font-semibold'>14 oct 2023, Saturday</p>
         <h2 className='text-3xl md:text-4xl  text-white font-medium py-4  lg:text-5xl lg:leading-snug'>

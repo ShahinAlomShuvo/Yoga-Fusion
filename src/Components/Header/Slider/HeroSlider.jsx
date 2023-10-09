@@ -1,4 +1,6 @@
-import Slider from "react-slick";
+import Aos from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import sliderOne from "../../../assets/Images/slider1.webp";
@@ -6,6 +8,9 @@ import sliderTwo from "../../../assets/Images/slider2.jpeg";
 import sliderThree from "../../../assets/Images/slider3.webp";
 
 const HeroSlider = () => {
+  useEffect(() => {
+    Aos.init({ duration: 2000 });
+  }, []);
   return (
     <div className='relative'>
       <div className='carousel w-full '>
@@ -17,7 +22,10 @@ const HeroSlider = () => {
             }}
           >
             <div className='hero-overlay bg-opacity-60'></div>
-            <div className='hero-content text-center text-neutral-content'>
+            <div
+              className='hero-content text-center text-neutral-content'
+              data-aos='fade-up'
+            >
               <div className='max-w-md'>
                 <h1 className='mb-5 text-3xl md:text-5xl font-bold'>
                   Mediation Practice <br />{" "}
@@ -48,7 +56,10 @@ const HeroSlider = () => {
             }}
           >
             <div className='hero-overlay bg-opacity-60'></div>
-            <div className='hero-content text-center text-neutral-content'>
+            <div
+              className='hero-content text-center text-neutral-content'
+              data-aos='fade-up'
+            >
               <div className='max-w-md'>
                 <h1 className='mb-5 text-3xl md:text-5xl font-bold'>
                   Essential Yoga <br />{" "}
@@ -79,7 +90,10 @@ const HeroSlider = () => {
             }}
           >
             <div className='hero-overlay bg-opacity-60'></div>
-            <div className='hero-content text-center text-neutral-content'>
+            <div
+              className='hero-content text-center text-neutral-content'
+              data-aos='fade-up'
+            >
               <div className='max-w-md'>
                 <h1 className='mb-5 text-3xl md:text-5xl font-bold'>
                   Inspiration <br />{" "}

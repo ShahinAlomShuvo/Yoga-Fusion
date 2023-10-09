@@ -2,14 +2,20 @@ import { useLoaderData } from "react-router-dom";
 import owner from "../../assets/Images/slider1.webp";
 import OurTeacher from "./OurTeacher";
 import ClientReviews from "../../Components/ClientReviews/ClientReviews";
+import Aos from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 
 const AboutUs = () => {
   const teacherData = useLoaderData();
+  useEffect(() => {
+    Aos.init();
+  }, []);
 
   return (
     <div>
       {/* studio owner  */}
-      <div className='grid md:grid-cols-2 pt-10'>
+      <div className='grid md:grid-cols-2 pt-10' data-aos='zoom-in'>
         <div>
           <img className='h-full' src={owner} alt='owner' />
         </div>
