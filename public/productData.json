@@ -1,0 +1,65 @@
+[
+  {
+    "id": "1",
+    "category": "accessory",
+    "productName": "Yoga Bra",
+    "img": "https://i.ibb.co/2F2D02G/yoga-bra.jpg",
+    "price": 19.99
+  },
+  {
+    "id": "2",
+    "category": "clothes",
+    "productName": "Mantra Pants",
+    "img": "https://i.ibb.co/NTTr0yR/clothes.jpg",
+    "price": 39.99
+  },
+  {
+    "id": "3",
+    "category": "accessory",
+    "productName": "Beige Pullover Top",
+    "img": "https://i.ibb.co/T8T2HCt/togatop.jpg",
+    "price": 29.99
+  },
+  {
+    "id": "4",
+    "category": "mats",
+    "productName": "Premium Yoga Mat",
+    "img": "https://i.ibb.co/hZbXy15/11111111111111111.jpg",
+    "price": 59.99
+  },
+  {
+    "id": "5",
+    "category": "bags",
+    "productName": "Leather Backpack",
+    "img": "https://i.ibb.co/VN5C0vp/bags2.webp",
+    "price": 69.99
+  },
+  {
+    "id": "6",
+    "category": "mats",
+    "productName": "Eco-Friendly Yoga Mat",
+    "img": "https://i.ibb.co/XYj8CpX/111111111.jpg",
+    "price": 49.99
+  },
+  {
+    "id": "7",
+    "category": "bags",
+    "productName": "Stylish Tote Bag",
+    "img": "https://i.ibb.co/hfmVFXH/bags.webp",
+    "price": 49.99
+  },
+  {
+    "id": "8",
+    "category": "props",
+    "productName": "Hoodie",
+    "img": "https://i.ibb.co/LYq9D5z/hoddie.jpg",
+    "price": 25.99
+  },
+  {
+    "id": "9",
+    "category": "clothes",
+    "productName": "Bright Berry Tunic",
+    "img": "https://i.ibb.co/b6qKCTV/clothes2.jpg",
+    "price": 34.99
+  }
+]

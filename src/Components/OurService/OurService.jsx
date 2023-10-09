@@ -8,7 +8,7 @@ const OurService = ({ serviceData }) => {
       <SectionHeader
         sectionTitle={"Our Services"}
         sectionSlogan={
-          "Discover the path to inner peace and well-being through our yoga classes"
+          "Discover the path to inner peace and well-being through our yoga event"
         }
       ></SectionHeader>
       <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-5'>

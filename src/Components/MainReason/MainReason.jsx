@@ -6,7 +6,7 @@ const MainReason = () => {
       <div className='container mx-auto pb-10 px-5 lg:px-0'>
         {/* main reason header  */}
         <h2 className='text-3xl text-[#45445A] font-bold text-center pt-20 pb-10 '>
-          The Main Reasons to PracticeYoga:
+          The Main Reasons to Join Our Event:
         </h2>
         {/* main reason container  */}
         <div className='grid md:grid-cols-2  lg:grid-cols-3 gap-5 items-end'>

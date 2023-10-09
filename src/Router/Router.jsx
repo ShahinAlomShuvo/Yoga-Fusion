@@ -45,6 +45,7 @@ const router = createBrowserRouter([
             <Store></Store>
           </PrivateRoute>
         ),
+        loader: () => fetch("/productData.json"),
       },
       {
         path: "/login",

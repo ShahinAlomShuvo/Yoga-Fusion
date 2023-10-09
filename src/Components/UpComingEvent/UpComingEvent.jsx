@@ -10,7 +10,7 @@ const UpComingEvent = () => {
       <div className='bg-[#3A3651] pl-[80px] py-12 flex flex-col justify-center'>
         <p className='text-[#C4D114] font-semibold'>14 oct 2023, Saturday</p>
         <h2 className='text-3xl md:text-4xl  text-white font-medium py-4  lg:text-5xl lg:leading-snug'>
-          Upcoming Yoga Workshop in the City
+          Upcoming Yoga Workshop Event in the City
         </h2>
         <ul className='text-white text-sm space-y-4'>
           <li className='flex items-center gap-3'>
