@@ -1,5 +1,5 @@
 <h1 >Project Name: YogaFusion</h1>
-<h2>Project Url: </h2>
+<h2>Project Url: https://yogafusion-4a06d.web.app/</h2>
 
 <h1 align='center'>My Project features</h1>
 
