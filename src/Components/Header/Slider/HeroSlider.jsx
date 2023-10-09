@@ -6,6 +6,7 @@ import "slick-carousel/slick/slick-theme.css";
 import sliderOne from "../../../assets/Images/slider1.webp";
 import sliderTwo from "../../../assets/Images/slider2.jpeg";
 import sliderThree from "../../../assets/Images/slider3.webp";
+import { Link } from "react-router-dom";
 
 const HeroSlider = () => {
   useEffect(() => {
@@ -32,9 +33,12 @@ const HeroSlider = () => {
                   <span className='text-[#C4D114]'>for all</span>
                 </h1>
 
-                <button className='btn bg-[#C4D114] text-gray-600 border border-transparent hover:border-[#C4D114] hover:bg-transparent hover:text-[#C4D114] capitalize py-2 px-4 rounded-md transition duration-300 ease-in-out '>
+                <Link
+                  to={"/contact"}
+                  className='btn bg-[#C4D114] text-gray-600 border border-transparent hover:border-[#C4D114] hover:bg-transparent hover:text-[#C4D114] capitalize py-2 px-4 rounded-md transition duration-300 ease-in-out '
+                >
                   Make an Appointment
-                </button>
+                </Link>
               </div>
             </div>
           </div>
@@ -66,9 +70,12 @@ const HeroSlider = () => {
                   <span className='text-[#C4D114]'>for busy People</span>
                 </h1>
 
-                <button className='btn bg-[#C4D114] text-gray-600 border border-transparent hover:border-[#C4D114] hover:bg-transparent hover:text-[#C4D114] capitalize py-2 px-4 rounded-md transition duration-300 ease-in-out '>
+                <Link
+                  to={"/contact"}
+                  className='btn bg-[#C4D114] text-gray-600 border border-transparent hover:border-[#C4D114] hover:bg-transparent hover:text-[#C4D114] capitalize py-2 px-4 rounded-md transition duration-300 ease-in-out '
+                >
                   Make an Appointment
-                </button>
+                </Link>
               </div>
             </div>
           </div>
@@ -100,9 +107,12 @@ const HeroSlider = () => {
                   <span className='text-[#C4D114]'>for joyful living</span>
                 </h1>
 
-                <button className='btn bg-[#C4D114] text-gray-600 border border-transparent hover:border-[#C4D114] hover:bg-transparent hover:text-[#C4D114] capitalize py-2 px-4 rounded-md transition duration-300 ease-in-out '>
+                <Link
+                  to={"/contact"}
+                  className='btn bg-[#C4D114] text-gray-600 border border-transparent hover:border-[#C4D114] hover:bg-transparent hover:text-[#C4D114] capitalize py-2 px-4 rounded-md transition duration-300 ease-in-out '
+                >
                   Make an Appointment
-                </button>
+                </Link>
               </div>
             </div>
           </div>

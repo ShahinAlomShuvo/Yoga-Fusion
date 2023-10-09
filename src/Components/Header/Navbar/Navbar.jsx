@@ -2,7 +2,6 @@ import { Link, NavLink } from "react-router-dom";
 import avatar from "../../../assets/Images/avatar.png";
 import useAuth from "../../../Hooks/useAuth";
 import toast from "react-hot-toast";
-// import logo from "../../../assets/Images/yogaLogo.jpg";
 
 const Navbar = () => {
   const { user, signOutUser } = useAuth();
@@ -28,10 +27,7 @@ const Navbar = () => {
         <NavLink to={"/store"}>Store</NavLink>
       </li>
       <li>
-        <NavLink to={"/login"}>Login</NavLink>
-      </li>
-      <li>
-        <NavLink to={"/register"}>Register</NavLink>
+        <NavLink to={"/contact"}>Contact</NavLink>
       </li>
     </>
   );
@@ -63,9 +59,9 @@ const Navbar = () => {
               {navLinks}
             </ul>
           </div>
-          <h2 className='text-[#45445A] text-2xl font-bold'>
+          <Link to={"/"} className=' text-[#45445A] text-2xl font-bold'>
             Yoga <span className='text-[#CEDB1F]'>Fusion</span>
-          </h2>
+          </Link>
         </div>
         <div className='navbar-center hidden lg:flex'>
           <ul className='menu menu-horizontal px-1'>{navLinks}</ul>

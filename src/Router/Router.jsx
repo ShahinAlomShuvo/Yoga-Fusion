@@ -8,6 +8,7 @@ import AboutUs from "../Pages/AboutUs/AboutUs";
 import Store from "../Pages/Store/Store";
 import ServiceDetails from "../Components/ServiceDetails/ServiceDetails";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
+import Contact from "../Components/Contact/Contact";
 
 const router = createBrowserRouter([
   {
@@ -54,6 +55,14 @@ const router = createBrowserRouter([
       {
         path: "/register",
         element: <Register></Register>,
+      },
+      {
+        path: "/contact",
+        element: (
+          <PrivateRoute>
+            <Contact></Contact>
+          </PrivateRoute>
+        ),
       },
     ],
   },

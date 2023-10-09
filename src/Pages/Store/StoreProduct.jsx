@@ -1,6 +1,7 @@
 import Aos from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
+import toast from "react-hot-toast";
 
 const StoreProduct = ({ product, getId }) => {
   const { productName, img, price, id } = product;
@@ -11,6 +12,7 @@ const StoreProduct = ({ product, getId }) => {
 
   const handleProduct = () => {
     getId(id);
+    toast.success("Successfully added");
   };
 
   return (

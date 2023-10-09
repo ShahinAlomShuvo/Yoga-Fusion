@@ -6,6 +6,7 @@ import banner from "../../assets/Images/slider1.webp";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const UpComingEvent = () => {
   useEffect(() => {
@@ -29,9 +30,12 @@ const UpComingEvent = () => {
             <FaCheck className='text-[#C4D114]'></FaCheck> Join the community
           </li>
         </ul>
-        <button className='btn w-2/3 md:w-1/2 mt-6  bg-[#C4D114] text-gray-600 border border-transparent hover:border-[#C4D114] hover:bg-transparent hover:text-[#C4D114] capitalize py-2 md:px-4 rounded-md transition duration-300 ease-in-out '>
+        <Link
+          to={"/contact"}
+          className='btn w-2/3 md:w-1/2 mt-6  bg-[#C4D114] text-gray-600 border border-transparent hover:border-[#C4D114] hover:bg-transparent hover:text-[#C4D114] capitalize py-2 md:px-4 rounded-md transition duration-300 ease-in-out '
+        >
           Make an Appointment
-        </button>
+        </Link>
       </div>
       <div className='hidden lg:block '>
         <Player fluid={false} height={450} width={700} poster={banner}>

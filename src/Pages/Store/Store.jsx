@@ -20,13 +20,12 @@ const Store = () => {
   };
 
   return (
-    <div className='grid grid-cols-4 gap-5 container mx-auto py-20'>
-      <div>
-        <h2>Categories</h2>
+    <div className='grid md:grid-cols-2 lg:grid-cols-4 gap-5 container mx-auto py-20'>
+      <div className='col-span-2 lg:col-span-1'>
         <Cart></Cart>
       </div>
       <div className='col-span-3'>
-        <div className='grid grid-cols-3 gap-5'>
+        <div className='grid md:grid-cols-2 px-5 lg:grid-cols-3 gap-5 lg:px-0'>
           {productData.map((product) => (
             <StoreProduct
               key={product.id}

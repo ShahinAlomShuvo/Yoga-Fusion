@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const ServiceDetailsCard = ({ detailsData, data }) => {
   const { serviceName, imageLink, price, description } = detailsData;
 
@@ -14,9 +16,15 @@ const ServiceDetailsCard = ({ detailsData, data }) => {
           <p className='mb-6 block  text-base font-normal leading-relaxed text-gray-700 antialiased'>
             {description}
           </p>
-          <p className='text-xl font-medium text-[#45445A]'>
+          <p className='text-xl font-medium text-[#45445A] pb-4'>
             Session Fee: ${price} /month
           </p>
+          <Link
+            to={"/contact"}
+            className='btn bg-[#C4D114] text-gray-600 border border-transparent hover:border-[#C4D114] hover:bg-transparent hover:text-[#C4D114] capitalize py-2 px-4 rounded-md transition duration-300 ease-in-out '
+          >
+            Make an Appointment
+          </Link>
         </div>
       </div>
     </div>
